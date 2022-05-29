@@ -5,10 +5,12 @@ public class GroupAlarmIfPackageBuilder implements IfPackageBuilder{
     private IfSchedule ifSchedule;
     private IfTarget ifTarget;
     private IfThen ifThen;
+    private IfPackage ifPackage;
     @Override
-    public IfPackageBuilder setIfCondition(IfCondition ifCondition) {
+    public IfConditionBuilder setIfCondition(IfCondition ifCondition) {
          this.ifCondition = ifCondition;
-         return this;
+         IfConditionBuilder ifConditionBuilder = new GroupAlarmIfConditionBuilder();
+         return ifConditionBuilder;
     }
 
     @Override
@@ -30,7 +32,14 @@ public class GroupAlarmIfPackageBuilder implements IfPackageBuilder{
     }
 
     @Override
+    public IfConditionBuilder setIfPackage(IfPackage ifPackage) {
+        this.ifPackage = ifPackage;
+        IfConditionBuilder ifConditionBuilder = new GroupAlarmIfConditionBuilder();
+        return ifConditionBuilder;
+    }
+
+    @Override
     public IfPackage getIfPackage() {
-        return new IfPackage(ifCondition, ifSchedule, ifTarget, ifThen);
+        return null;
     }
 }
