@@ -17,6 +17,8 @@ public class Main {
         Champion poolParty아리 = new 아리(new PoolParty());
         poolParty아리.skillR();
         poolParty아리.move();
+
+
     }
 }
 
